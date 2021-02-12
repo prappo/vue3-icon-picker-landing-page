@@ -8,7 +8,7 @@
         href="https://github.com/hasinhayder/vue3-icon-picker"
         target="_blank"
       >
-        <img class="w-1/6" alt="Vue logo" src="./assets/logo.png" />
+        <img class="w-1/6" alt="Vue logo" :src="images.logo" />
         Vue3 Icon Picker
       </a>
     </div>
@@ -16,7 +16,7 @@
     <!-- Preview Image section -->
 
     <div class="flex justify-center py-2">
-      <img class="w-4/6" src="./assets/preview.png" />
+      <img class="w-4/6" :src="images.preview" />
     </div>
 
     <!-- Basic Example -->
@@ -124,8 +124,17 @@ import { ref } from "vue";
 import IconPicker from "./components/IconPicker.vue";
 import SshPre from "simple-syntax-highlighter";
 import "simple-syntax-highlighter/dist/sshpre.css";
-
+import logo from './assets/logo.png'
+import preview from './assets/preview.png'
 export default {
+  data(){
+    return {
+      images: {
+        logo: logo,
+        preview: preview
+      }
+    }
+  },
   components: {
     IconPicker,
     SshPre,
